@@ -1,5 +1,6 @@
 package com.example.menu
 
+import com.example.menu.utils.AnimationUtils
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -47,6 +48,7 @@ class FoodListFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         binding.menuIcon.setOnClickListener {
+            AnimationUtils.scaleView(binding.menuIcon)
             showAddFoodDialog()
         }
 

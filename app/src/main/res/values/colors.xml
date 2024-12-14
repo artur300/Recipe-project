@@ -5,7 +5,7 @@
     <color name="beige">#F2EADF</color>
     <color name="bright_orange">#F2790F</color>
     <color name="coral_red">#F26457</color>
-
+    <color name="white">#FFFFFF</color>
     <!-- התאמה לצבעים כלליים -->
     <color name="primary">#3B7302</color> <!-- יכול לשמש כצבע ראשי -->
     <color name="secondary">#F29F05</color> <!-- יכול לשמש כצבע משני -->
