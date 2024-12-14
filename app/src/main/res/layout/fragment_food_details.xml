@@ -1,13 +1,13 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <!-- Image View -->
         <ImageView
@@ -27,8 +27,51 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:textColor="@color/green" />
+
+        <!-- Author Name -->
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author Name: Unknown"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/bright_orange" />
+
+        <!-- Vegan/Non-Vegan -->
+        <TextView
+            android:id="@+id/vegan_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegan Status: Unknown"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/bright_orange" />
+
+        <!-- Ingredients -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingredients_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingredients"
+            style="@style/CustomTextInputLayout"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:gravity="top"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Food Description -->
         <com.google.android.material.textfield.TextInputLayout

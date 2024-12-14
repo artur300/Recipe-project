@@ -1,75 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:fillViewport="true">
 
-    <!-- Food Name Input -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/food_name_input_layout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Food Name"
-        style="@style/CustomTextInputLayout">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/food_name_input"
+        <!-- Food Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginBottom="15dp"
+            android:id="@+id/food_name_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColor="@color/coral_red"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Enter Food Name"
+            style="@style/CustomTextInputLayout">
 
-    <!-- Food Description Input -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/food_description_input_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter description"
-        style="@style/CustomTextInputLayout"
-        android:layout_marginTop="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/food_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/food_description_input"
+        <!-- Author Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/author_name_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:gravity="top"
-            android:textColor="@color/coral_red"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Enter Author Name"
+            style="@style/CustomTextInputLayout">
 
-    <!-- Button to Pick Image -->
-    <Button
-        android:id="@+id/btn_pick_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pick Image"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/orange"
-        android:textColor="@android:color/white" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/author_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Image Preview -->
-    <ImageView
-        android:id="@+id/food_image_preview"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Preview" />
+        <!-- Vegan/Non-Vegan Selection -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
 
-    <!-- Add/Confirm Button -->
-    <Button
-        android:id="@+id/btn_add_food"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Food/Confirm"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/green"
-        android:textColor="@android:color/white" />
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/radio_vegan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vegan" />
+
+            <RadioButton
+                android:id="@+id/radio_non_vegan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non-Vegan" />
+        </RadioGroup>
+
+        <!-- Food Description Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/food_description_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter description"
+            style="@style/CustomTextInputLayout"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/food_description_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:gravity="top"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Ingredients Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingredients_description_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter ingredients"
+            style="@style/CustomTextInputLayout"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingredients_description_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:gravity="top"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Button to Pick Image -->
+        <Button
+            android:id="@+id/btn_pick_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick Image"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/orange"
+            android:textColor="@android:color/white" />
+
+        <!-- Image Preview -->
+        <ImageView
+            android:id="@+id/food_image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Preview" />
+
+        <!-- Add/Confirm Button -->
+        <Button
+            android:id="@+id/btn_add_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Food/Confirm"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/green"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>
