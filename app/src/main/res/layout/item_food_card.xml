@@ -8,71 +8,71 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
     app:strokeWidth="2dp"
-    app:strokeColor="@color/brown"
-    app:cardBackgroundColor="@color/light_beige">
+    app:strokeColor="@color/green"
+    app:cardBackgroundColor="@color/beige">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp">
 
-        <!-- תמונה -->
-        <ImageView
-            android:id="@+id/food_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground" />
+<!-- תמונה -->
+<ImageView
+    android:id="@+id/food_image"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_launcher_foreground" />
 
-        <!-- שם המנה -->
-        <TextView
-            android:id="@+id/food_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingTop="8dp"
-            android:text="Steak Platter"
-            android:textColor="@color/dark_brown"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+<!-- שם המנה -->
+<TextView
+    android:id="@+id/food_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:paddingTop="8dp"
+    android:text="Steak Platter"
+    android:textColor="@color/green"
+android:textSize="18sp"
+android:textStyle="bold" />
 
+<!-- כפתור "פרטים נוספים" -->
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_view_details"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:text="View Details"
+    android:textColor="@color/bright_orange"
+app:cornerRadius="8dp"
+app:strokeColor="@color/bright_orange"
+app:strokeWidth="1dp" />
 
+<!-- כפתור "ערוך" -->
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_edit"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:text="Edit"
+    android:textColor="@color/bright_orange"
+app:cornerRadius="8dp"
+app:strokeColor="@color/bright_orange"
+app:strokeWidth="1dp" />
 
-        <!-- כפתור "פרטים נוספים" -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_view_details"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="View Details"
-            android:textColor="@color/brown"
-            app:cornerRadius="8dp"
-            app:strokeColor="@color/brown"
-            app:strokeWidth="1dp" />
+<!-- כפתור "מחיקה" -->
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_delete"
+    style="@style/Widget.MaterialComponents.Button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/coral_red"
+android:text="Delete"
+android:textColor="@color/beige"
+app:cornerRadius="8dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_edit"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Edit"
-            android:textColor="@color/brown"
-            app:cornerRadius="8dp"
-            app:strokeColor="@color/brown"
-            app:strokeWidth="1dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_delete"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/brown"
-            android:text="Delete"
-            android:textColor="@android:color/white"
-            app:cornerRadius="8dp" />
-
-    </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>

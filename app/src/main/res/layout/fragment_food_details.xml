@@ -27,7 +27,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/green" />
 
         <!-- Food Description -->
         <com.google.android.material.textfield.TextInputLayout
@@ -35,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Description"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/CustomTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/food_description"
@@ -45,7 +46,9 @@
                 android:minLines="3"
                 android:focusable="false"
                 android:cursorVisible="false"
-                android:gravity="top" />
+                android:gravity="top"
+                android:textColor="@color/coral_red"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Delete Button -->
@@ -55,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:layout_marginTop="24dp"
-            android:backgroundTint="@android:color/holo_red_light"
+            android:backgroundTint="@color/coral_red"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
