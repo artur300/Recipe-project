@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.menu.databinding.FragmentFoodDetailsBinding
+import com.bumptech.glide.Glide
+
 
 class FoodDetailsFragment : Fragment() {
 
@@ -26,7 +28,12 @@ class FoodDetailsFragment : Fragment() {
         binding.foodName.text = foodName
         binding.foodDescription.setText(foodDescription) // הצגת התיאור
         foodImageUri?.let {
-            binding.foodImage.setImageURI(Uri.parse(it))
+            // שימוש ב-Glide לטעינת תמונה בפרטי המנה
+            Glide.with(requireContext())
+                .load(it)
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_background)
+                .into(binding.foodImage)
         }
 
         return binding.root

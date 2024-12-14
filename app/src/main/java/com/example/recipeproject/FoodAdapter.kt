@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.menu.databinding.ItemFoodCardBinding
+import com.bumptech.glide.Glide
 
 class FoodAdapter(
     private val foods: MutableList<Food>,
@@ -23,8 +24,13 @@ class FoodAdapter(
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         val food = foods[position]
         holder.binding.foodName.text = food.name
+
         food.imageUri?.let {
-            holder.binding.foodImage.setImageURI(Uri.parse(it))
+            Glide.with(holder.itemView.context)
+                .load(it)
+                .placeholder(R.drawable.ic_launcher_foreground) // תמונה חלופית בזמן הטעינה
+                .error(R.drawable.ic_launcher_background) // תמונה במקרה של שגיאה
+                .into(holder.binding.foodImage)
         }
 
         holder.binding.btnEdit.setOnClickListener {

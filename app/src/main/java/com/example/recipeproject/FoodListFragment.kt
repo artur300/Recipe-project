@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.menu.databinding.FragmentFoodListBinding
+import com.bumptech.glide.Glide
 
 class FoodListFragment : Fragment() {
 
@@ -28,7 +29,15 @@ class FoodListFragment : Fragment() {
     private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         if (uri != null) {
             selectedImageUri = uri
-            imagePreview?.setImageURI(uri)
+            imagePreview?.let {
+                Glide.with(requireContext())
+                    .load(uri)
+                    .placeholder(R.drawable.ic_launcher_foreground)
+                    .error(R.drawable.ic_launcher_background)
+                    .into(it)
+            }
+        } else {
+            Toast.makeText(requireContext(), "No image selected", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -78,7 +87,7 @@ class FoodListFragment : Fragment() {
         imagePreview = dialogView.findViewById(R.id.food_image_preview)
         val pickImageButton = dialogView.findViewById<Button>(R.id.btn_pick_image)
         val nameInput = dialogView.findViewById<EditText>(R.id.food_name_input)
-        val descriptionInput = dialogView.findViewById<EditText>(R.id.food_description_input) // Description field
+        val descriptionInput = dialogView.findViewById<EditText>(R.id.food_description_input)
 
         pickImageButton.setOnClickListener {
             pickImageLauncher.launch("image/*")
@@ -107,14 +116,17 @@ class FoodListFragment : Fragment() {
 
         imagePreview = dialogView.findViewById(R.id.food_image_preview)
         val nameInput = dialogView.findViewById<EditText>(R.id.food_name_input)
-        val descriptionInput = dialogView.findViewById<EditText>(R.id.food_description_input) // Description field
+        val descriptionInput = dialogView.findViewById<EditText>(R.id.food_description_input)
         val pickImageButton = dialogView.findViewById<Button>(R.id.btn_pick_image)
 
         nameInput.setText(food.name)
-        descriptionInput.setText(food.description) // Set current description
-        food.imageUri?.let {
-            selectedImageUri = Uri.parse(it)
-            imagePreview?.setImageURI(selectedImageUri)
+        descriptionInput.setText(food.description)
+        food.imageUri?.let { uri ->
+            Glide.with(requireContext())
+                .load(uri)
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_background)
+                .into(imagePreview!!)
         }
 
         pickImageButton.setOnClickListener {
@@ -143,7 +155,7 @@ class FoodListFragment : Fragment() {
         val bundle = Bundle().apply {
             putString("food_name", food.name)
             putString("food_image_uri", food.imageUri)
-            putString("food_description", food.description) // Pass description to details
+            putString("food_description", food.description)
         }
 
         parentFragmentManager.beginTransaction()
